@@ -5,8 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sky's the Limit Cleaning Co. | Southwest Florida</title>
-<meta name="description" content="Professional residential and commercial cleaning in Southwest Florida. Weekly, biweekly, monthly, deep cleaning and move-in cleaning. Call Sky's the Limit at 941-286-6272.">
+<title>Sky's the Limit Cleaning Co. | Charlotte County & Southwest Florida</title>
+
+<meta name="description" content="Sky's the Limit Cleaning Co. provides upscale vacation rental, residential and commercial cleaning in Englewood, North Port, Port Charlotte, Punta Gorda, Venice, Osprey and Sarasota, Florida. Call 941-286-6272.">
+
 <meta name="theme-color" content="#071a35">
 
 <style>
@@ -14,6 +16,7 @@
   --navy: #071a35;
   --blue: #123d69;
   --gold: #c9a96e;
+  --lightgold: #e8d4ac;
   --light: #f5f7fa;
   --text: #29364a;
 }
@@ -27,24 +30,28 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   line-height: 1.7;
 }
 
 header {
   background: var(--navy);
-  padding: 18px 7%;
+  padding: 17px 6%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 15px rgba(0,0,0,.2);
 }
 
 .brand {
   color: white;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -54,63 +61,99 @@ header {
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 19px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
 }
 
 nav a:hover { color: var(--gold); }
 
+/* HOMEPAGE SKYLINE */
+
 .hero {
-  min-height: 590px;
+  min-height: 660px;
   padding: 90px 8%;
-  background:
-    radial-gradient(ellipse at 85% 20%, #204d77 0%, transparent 45%),
-    linear-gradient(120deg, #041124, #102d50 65%, #071a35);
-  color: white;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(90deg,
+      rgba(4,15,35,.93) 0%,
+      rgba(4,15,35,.75) 55%,
+      rgba(4,15,35,.35) 100%),
+    linear-gradient(180deg,
+      #142d50 0%,
+      #a66c59 48%,
+      #e0b77c 70%,
+      #142b40 100%);
 }
 
-.hero:after {
-  content: "✦";
+.skyline {
   position: absolute;
-  right: 9%;
-  top: 10%;
-  color: rgba(201,169,110,.3);
-  font-size: 190px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 65%;
+  pointer-events: none;
+  opacity: .8;
 }
 
 .hero-content {
   max-width: 720px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.tagline {
-  color: var(--gold);
-  letter-spacing: 3px;
+.hero-small {
+  color: var(--lightgold);
+  font-size: 14px;
+  letter-spacing: 4px;
   font-weight: bold;
   margin-bottom: 18px;
 }
 
+.hero-brand {
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 5vw, 55px);
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.15;
+  color: white;
+  text-shadow: 2px 3px 12px rgba(0,0,0,.5);
+}
+
+.hero-brand span {
+  color: var(--lightgold);
+}
+
+.hero-subtitle {
+  color: var(--lightgold);
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin: 12px 0 20px;
+}
+
 .hero h1 {
-  font-size: clamp(40px, 6vw, 68px);
-  line-height: 1.12;
+  font-size: clamp(32px, 5vw, 53px);
+  line-height: 1.15;
   margin-bottom: 20px;
 }
 
 .hero h1 span { color: var(--gold); }
 
 .hero p {
-  font-size: 19px;
-  margin-bottom: 28px;
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 25px;
+  color: #f1f3f7;
 }
 
 .btn {
@@ -121,74 +164,131 @@ nav a:hover { color: var(--gold); }
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
+  border: 1px solid var(--gold);
   margin: 5px;
   transition: .2s;
 }
 
 .btn:hover {
   background: white;
+  border-color: white;
   transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--gold);
   color: white;
 }
 
-section { padding: 75px 8%; }
+/* GENERAL SECTIONS */
+
+section { padding: 80px 8%; }
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  max-width: 760px;
+  margin: 0 auto 45px;
 }
 
 .section-title h2 {
   color: var(--navy);
-  font-size: 34px;
+  font-size: clamp(28px, 4vw, 38px);
   line-height: 1.2;
+  margin-bottom: 12px;
 }
 
-.section-title p {
-  color: #68778a;
-  margin-top: 10px;
+.section-title p { color: #68778a; }
+
+.gold-line {
+  width: 65px;
+  height: 3px;
+  background: var(--gold);
+  margin: 17px auto;
 }
+
+/* SERVICES */
 
 .services, .schedule, .areas {
   background: var(--light);
 }
 
-.service-grid, .schedule-grid {
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0,0,0,.05);
+  border-bottom: 3px solid var(--gold);
+  transition: .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.service-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  color: var(--navy);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.featured-service {
+  border-top: 4px solid var(--gold);
+}
+
+.feature-label {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--lightgold);
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* CLEANING SCHEDULES */
+
+.schedule-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
 }
 
-.service-card, .schedule-card {
+.schedule-card {
+  text-align: center;
+  padding: 32px 22px;
   background: white;
-  padding: 30px 24px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+  border: 1px solid #e5e7eb;
   border-bottom: 3px solid var(--gold);
+  border-radius: 10px;
 }
 
-.service-card h3, .schedule-card h3 {
+.schedule-card h3 {
   color: var(--navy);
+  font-size: 21px;
   margin-bottom: 10px;
 }
 
-.symbol {
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.schedule-card { text-align: center; }
-
-.schedule-card h3 { font-size: 23px; }
-
 .schedule-card p { color: #68778a; }
 
+/* ABOUT */
+
 .about {
+  background: var(--navy);
+  color: white;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 45px;
@@ -196,15 +296,15 @@ section { padding: 75px 8%; }
 }
 
 .about h2 {
-  font-size: 34px;
-  color: var(--navy);
+  color: var(--gold);
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
 .about-panel {
-  background: var(--navy);
-  color: white;
-  padding: 38px;
+  background: var(--blue);
+  border: 1px solid rgba(201,169,110,.5);
+  padding: 35px;
   border-radius: 12px;
 }
 
@@ -214,49 +314,94 @@ section { padding: 75px 8%; }
   margin-bottom: 15px;
 }
 
-.about-panel p { margin: 9px 0; }
+.about-panel p { margin: 10px 0; }
+
+/* SERVICE AREAS */
 
 .areas { text-align: center; }
 
 .area-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 25px auto;
+  max-width: 850px;
+}
+
+.area-list span {
+  background: white;
   color: var(--navy);
-  font-size: 18px;
+  border: 1px solid #e2e5e9;
+  border-radius: 25px;
+  padding: 10px 20px;
   font-weight: bold;
-  margin-top: 20px;
 }
 
-.quote {
-  background: var(--navy);
+/* CONTACT */
+
+.contact {
+  background: linear-gradient(135deg, #071a35, #123d69);
   color: white;
+}
+
+.contact .section-title h2 { color: var(--gold); }
+
+.contact .section-title p { color: #e2e8f0; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.contact-card {
+  padding: 30px;
   text-align: center;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(201,169,110,.5);
+  border-radius: 10px;
 }
 
-.quote h2 {
+.contact-card h3 {
   color: var(--gold);
-  font-size: 36px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.quote p { margin-bottom: 20px; }
-
-.contact-info {
-  margin: 25px 0;
-  font-size: 18px;
-}
-
-.contact-info a {
+.contact-card a {
   color: white;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
-.contact-info a:hover { color: var(--gold); }
+.contact-card a:hover { color: var(--gold); }
+
+.owner {
+  text-align: center;
+  margin: 45px auto 20px;
+  max-width: 700px;
+}
+
+.owner h3 {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.owner p { color: #e2e8f0; }
+
+/* FOOTER */
 
 footer {
   background: #041124;
   color: white;
   text-align: center;
-  padding: 35px 8%;
+  padding: 40px 8%;
 }
+
+footer h3 { font-size: 23px; }
 
 footer span { color: var(--gold); }
 
@@ -265,12 +410,51 @@ footer a {
   text-decoration: none;
 }
 
-@media(max-width:650px) {
-  header { justify-content: center; text-align: center; }
-  nav { justify-content: center; gap: 12px; }
-  .hero { min-height: 480px; padding: 65px 6%; }
-  .hero:after { font-size: 100px; right: 3%; }
-  section { padding: 55px 6%; }
+footer p { margin: 7px 0; }
+
+.mobile-call { display: none; }
+
+/* MOBILE */
+
+@media(max-width:700px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a { font-size: 13px; }
+
+  .hero {
+    min-height: 590px;
+    padding: 75px 6%;
+  }
+
+  .skyline { height: 45%; }
+
+  section { padding: 60px 6%; }
+
+  .mobile-call {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 200;
+    box-shadow: 0 -3px 15px rgba(0,0,0,.2);
+  }
+
+  body { padding-bottom: 45px; }
 }
 </style>
 </head>
@@ -278,204 +462,442 @@ footer a {
 <body>
 
 <header>
-  <div class="brand">SKY'S THE LIMIT <span>✦</span></div>
+  <div class="brand">
+    SKY'S THE LIMIT <span>✦</span> CLEANING CO.
+  </div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#schedule">Cleaning Plans</a>
     <a href="#about">About</a>
-    <a href="#areas">Areas</a>
+    <a href="#areas">Service Areas</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
 
+<!-- HOMEPAGE / SKYLINE -->
+
 <div class="hero" id="home">
+
+  <svg class="skyline" viewBox="0 0 1440 550"
+       preserveAspectRatio="xMidYMax slice"
+       xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#b48a65"/>
+        <stop offset="100%" stop-color="#071a35"/>
+      </linearGradient>
+    </defs>
+
+    <circle cx="1120" cy="190" r="95"
+            fill="#e7bd7d" opacity=".45"/>
+
+    <path d="M0 345 L0 300 L80 300 L80 260
+      L145 260 L145 315 L205 315 L205 220
+      L275 220 L275 290 L330 290 L330 190
+      L410 190 L410 310 L470 310 L470 250
+      L535 250 L535 325 L600 325 L600 210
+      L670 210 L670 300 L740 300 L740 245
+      L805 245 L805 320 L870 320 L870 205
+      L950 205 L950 290 L1020 290 L1020 245
+      L1090 245 L1090 310 L1150 310 L1150 230
+      L1230 230 L1230 320 L1300 320 L1300 265
+      L1370 265 L1370 320 L1440 320 L1440 550
+      L0 550 Z"
+      fill="#06172e" opacity=".9"/>
+
+    <path d="M0 365 Q350 345 720 365
+      T1440 365 L1440 550 L0 550 Z"
+      fill="url(#water)" opacity=".65"/>
+
+    <g fill="#d9b47c" opacity=".4">
+      <path d="M0 410 H1440 M0 435 H1440 M0 465 H1440"
+            stroke="#d9b47c" stroke-width="2"/>
+    </g>
+
+    <!-- Palm trees -->
+    <g stroke="#06172e" stroke-width="13"
+       fill="none" stroke-linecap="round">
+      <path d="M125 520 Q135 380 110 245"/>
+      <path d="M130 245 Q45 180 30 240
+        M130 245 Q65 125 90 100
+        M130 245 Q130 120 185 105
+        M130 245 Q220 170 235 230
+        M130 245 Q210 225 250 275"/>
+
+      <path d="M1320 520 Q1300 375 1340 220"/>
+      <path d="M1340 220 Q1250 150 1210 205
+        M1340 220 Q1280 100 1310 75
+        M1340 220 Q1380 100 1440 115
+        M1340 220 Q1430 175 1440 245"/>
+    </g>
+
+    <g fill="#c9a96e">
+      <circle cx="110" cy="245" r="8"/>
+      <circle cx="1340" cy="220" r="8"/>
+    </g>
+
+  </svg>
+
   <div class="hero-content">
-    <div class="tagline">TAKING CLEAN TO NEW HEIGHTS</div>
+
+    <div class="hero-small">
+      SOUTHWEST FLORIDA CLEANING SERVICES
+    </div>
+
+    <div class="hero-brand">
+      Sky's the <span>Limit</span>
+    </div>
+
+    <div class="hero-subtitle">
+      CLEANING CO.
+    </div>
 
     <h1>A Higher Standard of <span>Clean.</span></h1>
 
     <p>
-      Professional residential and commercial cleaning
-      throughout Southwest Florida. Exceptional service,
-      attention to detail, and beautiful results.
+      Professional vacation rental, residential,
+      and commercial cleaning. Exceptional attention
+      to detail, personalized service, and beautiful
+      results throughout Southwest Florida.
     </p>
 
-    <a href="#contact" class="btn">GET A FREE QUOTE</a>
-    <a href="tel:9412866272" class="btn btn-outline">CALL NOW</a>
+    <a href="#contact" class="btn">
+      REQUEST A FREE QUOTE
+    </a>
+
+    <a href="tel:9412866272" class="btn btn-outline">
+      CALL (941) 286-6272
+    </a>
+
   </div>
 </div>
 
+<!-- SERVICES -->
+
 <section class="services" id="services">
+
   <div class="section-title">
-    <h2>Our Cleaning Services</h2>
-    <p>Professional cleaning solutions for every space.</p>
+    <h2>Our Professional Cleaning Services</h2>
+    <div class="gold-line"></div>
+    <p>
+      From vacation rentals to family homes and commercial
+      properties, we bring a higher standard of clean
+      to every space.
+    </p>
   </div>
 
   <div class="service-grid">
 
-    <div class="service-card">
-      <div class="symbol">🏡</div>
-      <h3>Residential Cleaning</h3>
-      <p>Keep your home fresh, spotless, and welcoming with dependable cleaning services.</p>
-    </div>
+    <!-- FIRST SERVICE: VACATION RENTALS -->
 
-    <div class="service-card">
-      <div class="symbol">🏢</div>
-      <h3>Commercial Cleaning</h3>
-      <p>Professional cleaning for offices, businesses, and commercial properties.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="symbol">✨</div>
-      <h3>Deep Cleaning</h3>
-      <p>Detailed cleaning for kitchens, bathrooms, floors, and overlooked areas.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="symbol">🔑</div>
-      <h3>Move-In & Move-Out</h3>
-      <p>Get properties ready for new occupants with a thorough cleaning.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="symbol">🌴</div>
+    <div class="service-card featured-service">
+      <div class="feature-label">FEATURED SERVICE</div>
+      <div class="service-icon">🌴</div>
       <h3>Vacation Rental Cleaning</h3>
-      <p>Help keep vacation properties guest-ready and looking their best.</p>
+      <p>
+        Keep your vacation property guest-ready with
+        detailed cleaning and dependable turnover service.
+        Help create a welcoming first impression for
+        every arriving guest.
+      </p>
     </div>
 
     <div class="service-card">
-      <div class="symbol">🧹</div>
+      <div class="service-icon">🏡</div>
+      <h3>Residential Cleaning</h3>
+      <p>
+        Your home deserves more than just clean.
+        Experience a higher standard of care,
+        exceptional attention to detail, and a
+        spotless finish every time.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Cleaning</h3>
+      <p>
+        Professional cleaning for offices, businesses,
+        and commercial properties. Create a clean,
+        polished environment for employees and customers.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Deep Cleaning</h3>
+      <p>
+        Detailed cleaning for kitchens, bathrooms,
+        floors, surfaces, and those often-overlooked
+        areas that deserve extra attention.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔑</div>
+      <h3>Move-In & Move-Out Cleaning</h3>
+      <p>
+        Prepare your property for its next chapter
+        with a thorough cleaning designed to leave
+        every space fresh and welcoming.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🧹</div>
       <h3>One-Time Cleaning</h3>
-      <p>Professional cleaning when you need a little extra help.</p>
+      <p>
+        Whether you're preparing for company,
+        a special occasion, or simply need a fresh start,
+        we're ready to help.
+      </p>
     </div>
 
   </div>
 </section>
 
+<!-- CLEANING PLANS -->
+
 <section class="schedule" id="schedule">
+
   <div class="section-title">
     <h2>Cleaning Plans That Fit Your Schedule</h2>
-    <p>Choose the cleaning frequency that works best for you.</p>
+    <div class="gold-line"></div>
+    <p>
+      Flexible cleaning arrangements for homes,
+      vacation rentals, and businesses.
+    </p>
   </div>
 
   <div class="schedule-grid">
 
     <div class="schedule-card">
-      <div class="symbol">📅</div>
+      <div class="service-icon">📅</div>
       <h3>Weekly Cleaning</h3>
-      <p>Consistent cleaning to keep your space looking its best every week.</p>
+      <p>
+        Consistent cleaning every week to keep your
+        property looking its best.
+      </p>
     </div>
 
     <div class="schedule-card">
-      <div class="symbol">🗓️</div>
+      <div class="service-icon">🗓️</div>
       <h3>Biweekly Cleaning</h3>
-      <p>A convenient every-other-week cleaning schedule.</p>
+      <p>
+        Convenient every-other-week cleaning
+        for ongoing property maintenance.
+      </p>
     </div>
 
     <div class="schedule-card">
-      <div class="symbol">🏠</div>
+      <div class="service-icon">🏠</div>
       <h3>Monthly Cleaning</h3>
-      <p>Regular monthly cleaning to maintain a fresh environment.</p>
+      <p>
+        Regular monthly cleaning to maintain
+        a fresh and welcoming environment.
+      </p>
     </div>
 
     <div class="schedule-card">
-      <div class="symbol">⭐</div>
+      <div class="service-icon">⭐</div>
       <h3>Custom Cleaning</h3>
-      <p>One-time, special occasion, and customized cleaning arrangements.</p>
+      <p>
+        One-time, vacation rental turnover,
+        and customized cleaning arrangements.
+      </p>
     </div>
 
   </div>
 </section>
 
+<!-- ABOUT -->
+
 <section class="about" id="about">
+
   <div>
-    <h2>Clean Spaces. Higher Standards.</h2>
+    <h2>Clean Spaces. Higher Expectations.</h2>
 
     <p>
-      At Sky's the Limit Cleaning Co., our mission is simple:
-      deliver dependable service, exceptional attention to detail,
-      and a clean you can feel good about.
+      Welcome to Sky's the Limit Cleaning Co.,
+      where we believe every property deserves
+      a higher standard of care.
     </p>
 
     <br>
 
     <p>
-      From residential homes to commercial properties,
-      we believe every space deserves professional care.
-      We're proud to serve our Southwest Florida community.
+      Our goal is to provide dependable service,
+      exceptional attention to detail, and a
+      professional cleaning experience from
+      beginning to end.
+    </p>
+
+    <br>
+
+    <p>
+      Whether it's a vacation rental, residential
+      home, or commercial property, we believe
+      the details make all the difference.
+    </p>
+
+    <br>
+
+    <p style="color:#e8d4ac;font-family:Georgia,serif;font-style:italic;font-size:21px;">
+      Taking Clean to New Heights.
     </p>
   </div>
 
   <div class="about-panel">
-    <h3>Why Choose Us?</h3>
+    <h3>Why Choose Sky's the Limit?</h3>
     <p>✓ Attention to detail</p>
     <p>✓ Dependable service</p>
+    <p>✓ Vacation rental cleaning</p>
     <p>✓ Residential and commercial cleaning</p>
     <p>✓ Flexible cleaning schedules</p>
-    <p>✓ Personalized service</p>
+    <p>✓ Personalized cleaning solutions</p>
     <p>✓ Free cleaning estimates</p>
   </div>
+
 </section>
+
+<!-- SERVICE AREAS -->
 
 <section class="areas" id="areas">
+
   <div class="section-title">
-    <h2>Proudly Serving Southwest Florida</h2>
-    <p>Professional cleaning in our local communities.</p>
-  </div>
-
-  <div class="area-list">
-    Venice • Sarasota • North Port • Nokomis
-    <br><br>
-    Port Charlotte • Bradenton • Lakewood Ranch
-    <br><br>
-    Ellenton • Parrish • Surrounding Areas
-  </div>
-</section>
-
-<section class="quote" id="contact">
-  <h2>Ready for a Higher Standard of Clean?</h2>
-
-  <p>
-    Contact Sky's the Limit Cleaning Co. today
-    for your free cleaning estimate.
-  </p>
-
-  <div class="contact-info">
-    <p>📞 <a href="tel:9412866272">(941) 286-6272</a></p>
-
+    <h2>Proudly Serving Charlotte County & Surrounding Areas</h2>
+    <div class="gold-line"></div>
     <p>
-      ✉️ <a href="mailto:skysthelimitcleaningcomp@gmail.com">
-      skysthelimitcleaningcomp@gmail.com</a>
+      Professional cleaning services throughout
+      Charlotte County and surrounding Southwest
+      Florida communities.
     </p>
   </div>
 
-  <a href="tel:9412866272" class="btn">CALL NOW</a>
+  <div class="area-list">
+    <span>Englewood</span>
+    <span>North Port</span>
+    <span>Port Charlotte</span>
+    <span>Punta Gorda</span>
+    <span>Venice</span>
+    <span>Osprey</span>
+    <span>Sarasota</span>
+  </div>
 
-  <a href="mailto:skysthelimitcleaningcomp@gmail.com?subject=Free%20Cleaning%20Estimate"
-     class="btn">REQUEST A FREE QUOTE</a>
+  <p style="margin-top:25px;color:#68778a;">
+    Contact us to ask about service availability
+    in your area.
+  </p>
+
+</section>
+
+<!-- CONTACT SKY -->
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+    <h2>Let's Get Your Space Sparkling!</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      Contact Sky at Sky's the Limit Cleaning Co.
+      today for a personalized cleaning estimate.
+      She'd love to help you experience a higher
+      standard of clean!
+    </p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <div class="service-icon">📞</div>
+      <h3>Call Sky</h3>
+      <p>
+        <a href="tel:9412866272">
+          (941) 286-6272
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <div class="service-icon">✉️</div>
+      <h3>Email Sky</h3>
+      <p>
+        <a href="mailto:skysthelimitcleaningcomp@gmail.com">
+          skysthelimitcleaningcomp@gmail.com
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="owner">
+    <h3>Sky Gallant</h3>
+    <p>Owner | Sky's the Limit Cleaning Co.</p>
+    <p>Taking Clean to New Heights.</p>
+  </div>
+
+  <div style="text-align:center;margin-top:25px;">
+    <a href="tel:9412866272" class="btn">
+      CALL SKY TODAY
+    </a>
+
+    <a href="mailto:skysthelimitcleaningcomp@gmail.com?subject=Cleaning%20Estimate%20Request"
+       class="btn">
+      REQUEST A FREE ESTIMATE
+    </a>
+  </div>
+
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
+
   <h3>SKY'S THE LIMIT <span>CLEANING CO.</span></h3>
-  <p>Taking Clean to New Heights.</p>
+
+  <p style="color:#e8d4ac;font-family:Georgia,serif;font-style:italic;">
+    Taking Clean to New Heights.
+  </p>
+
   <br>
-  <p>Residential • Commercial • Property Cleaning</p>
-  <p>Southwest Florida</p>
+
+  <p>Vacation Rental • Residential • Commercial</p>
+
+  <p>Charlotte County & Southwest Florida</p>
+
   <br>
-  <p><a href="tel:9412866272">(941) 286-6272</a></p>
+
+  <p>
+    <a href="tel:9412866272">(941) 286-6272</a>
+  </p>
+
   <p>
     <a href="mailto:skysthelimitcleaningcomp@gmail.com">
-      Email Sky's the Limit
+      Email Sky
     </a>
   </p>
+
   <br>
-  <small>© 2026 Sky's the Limit Cleaning Co. All Rights Reserved.</small>
+
+  <small>
+    © 2026 Sky's the Limit Cleaning Co.
+    All Rights Reserved.
+  </small>
+
 </footer>
+
+<a href="tel:9412866272" class="mobile-call">
+  ☎ CALL SKY — (941) 286-6272
+</a>
 
 </body>
 </html>
+  
